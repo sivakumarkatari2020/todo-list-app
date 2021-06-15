@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Todo app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px;position: fixed;top: 100%;transform: translate(10%,-1000%); }
+    .attribution a { color: hsl(228, 45%, 44%);display: inline;}
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="head-part">
+      <h1>TODO</h1>
+      <div class="theme" onclick="chngTheme()">
+        <img src="/images/icon-sun.svg" alt="dark-mode" id="theme-changer">
+      </div>
+    </div>
+  </header>
+  <main>
+
+    <div class="add-item">
+      <div class="chk-wrapper">
+        <label for="chk-inp">
+          <input type="checkbox" name="chk-box" id="chk-inp">
+          <span id="checkmark"></span>
+        </label>
+      </div>
+      <input type="text" name="inp" id="inp" placeholder="Create a new todo...">
+    </div>
+
+    <div class="list-wrapper">
+    <div class="todo-list">
+      <!--Content will be dynamically added
+        <div class="todo-item">
+
+          <div class="chk-wrapper">
+          <label for="chk-inp">
+            <input type="checkbox" name="chk-box" id="chk-inp">
+            <span id="checkmark"></span>
+          </label>
+          </div>
+
+          <div class="todo-text">
+            <p>user value</p>
+          </div>
+
+          <div class="todo-del" onClick="delItem()">
+            <img src='/images/icon-cross.svg'>
+          </div>
+
+        </div>
+      -->
+      <em>your list is empty</em>
+    </div>
+
+    <div class="actions">
+      <div><a href="" id="items-left">0 items left</a></div>
+      <div class="nav">
+        <div>
+          <a href="">All</a>
+          <a href="">Active</a>
+          <a href="">Completed</a>
+        </div>
+      </div>
+      <div><a href="">Clear Completed</a></div>
+    </div>
+    </div>
+
+    <div class="bot-txt"><p>Drag and drop to reorder list</p></div>
+
+  </main>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+
+  <!--Script files goes here-->
+  <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,602 @@
+:root{
+    --main : hsl(235,21%,11%);
+    --card : hsl(235,24%,19%);
+    --text : hsl(234,39%,85%);
+    --fade-text : hsl(234,39%,85%);
+    --light-text : hsl(233,14%,35%);
+    --shadow : hsl(237,14%,25%);
+    --hover : hsl(236,33%,92%);
+    --blue : hsl(220,98%,61%);
+}
+/*Media query for the desktop layout*/
+@media screen and (min-width : 450px) {
+    body{
+        width: 100vw;
+        height: 100vh;
+        padding: 0;
+        margin: 0;
+        background-color: var(--main);
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 16px;
+    }
+    header{
+        width: 100%;
+        height: 40%;
+        margin: 0;
+        padding: 0;
+        background: url('/images/bg-desktop-dark.jpg') no-repeat;
+        background-size: cover;
+    }
+    header .head-part{
+        width: 500px;
+        height: 70px;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%,0%);
+    }
+    .head-part h1{
+        color: #ffffff;
+        font-weight: 700;
+        letter-spacing: 5px;
+    }
+
+    main{
+        width: 500px;
+        height: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-40%);
+    }
+
+    li,a{
+        text-decoration: none;
+        list-style-type: none;
+        display: block;
+    }
+
+    main .add-item{
+        width: 100%;
+        height: 10%;
+        background-color: var(--card);
+        border-radius: 5px 5px 5px 5px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: rgba(0,0,0,0.5) 0px 10px 50px -10px;
+    }
+
+    .add-item .chk-wrapper{
+        width: 10%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .chk-wrapper label{
+        width: 25px;
+        height: 25px;
+        padding: 0;
+        margin: 0;
+        border: 1px solid var(--light-text);
+        border-radius: 50%;
+        cursor: pointer;
+        box-sizing: border-box;
+        }
+
+    .chk-wrapper #chk-inp{
+        display: none;
+    }
+
+    .chk-wrapper input:checked + #checkmark{
+        background-size: 60%;
+    }
+
+    .chk-wrapper label #checkmark{
+        display: block;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        padding: 0;
+        margin: 0;
+        background: url('/images/icon-check.svg') no-repeat center/0%;
+    }
+
+    .add-item input[type='text']{
+        width: 90%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        border: none;
+        border-color: transparent;
+        border-radius: 5px;
+        background-color: inherit;
+        color: var(--light-text);
+        font-size: 16px;
+        font-family: 'Josefin Sans', sans-serif;
+    }
+
+
+    .list-wrapper{
+        width: 100%;
+        height: 70%;
+        padding: 0;
+        margin: 0;
+        box-shadow: rgb(0,0,0) 0px 40px 30px -10px;
+    }
+
+    .todo-list{
+        width: 100%;
+        height: 90%;
+        padding: 0;
+        margin: 0;
+        background-color: var(--card);
+        border-radius: 5px 5px 0px 0px;
+    }
+    .todo-list .todo-item{
+        width: 100%;
+        height: 15%;
+        padding: 0;
+        margin: 0;
+        border: none;
+        border-bottom: 1px solid var(--text);
+        background-color: inherit;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .todo-item .chk-wrapper{
+        width: 10%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .todo-item .chk-wrapper label{
+        width: 25px;
+        height: 25px;
+        padding: 0;
+        margin: 0;
+        border: 1px solid var(--light-text);
+        border-radius: 50%;
+        cursor: pointer;
+        box-sizing: border-box;
+    }
+
+    .todo-item .chk-wrapper #chk-inp{
+        display: none;
+    }
+
+    .todo-item .chk-wrapper input:checked + #checkmark{
+        background-size: 60%;
+    }
+
+    .todo-item .chk-wrapper label #checkmark{
+        display: block;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        padding: 0;
+        margin: 0;
+        background: url('/images/icon-check.svg') no-repeat center/0%;
+    }
+
+    .todo-item .todo-text p{
+        display: block;
+        width: 80%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        color: var(--text);
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .todo-item .todo-del{
+        width: 10%;
+        height: 100%;
+        background-color: inherit;
+        display: none;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .todo-list em{
+        display: block;
+        margin: auto;
+        color: var(--light-text);
+        position: relative;
+        top : 50%;
+        left: 100%;
+        transform: translate(-65%,-50%);
+    }
+
+    .actions{
+        width: 100%;
+        height: 15%;
+        background-color: var(--card);
+        border-top: 1px solid var(--light-text);
+        border-radius: 0px 0px 5px 5px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .actions a{
+        color: var(--light-text);
+        font-size: 14px;
+    }
+
+    .actions a:hover{
+        color: var(--blue);
+    }
+
+    .actions a:active{
+        color: var(--main);
+    }
+
+    .actions div{
+        width: 25%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--card);
+    }
+
+    .actions .nav{
+        width: 40%;
+        height: 100%;
+    }
+
+    .nav div{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .bot-txt{
+        width: 100%;
+        height: 10%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        color: var(--light-text);
+    }
+}
+
+/*Media query for the Mobile layout*/
+@media screen and (max-width : 450px) and (min-height : 600px) {
+    body{
+        width: 100%;
+        height: 100vh;
+        padding: 0;
+        margin: 0;
+        background-color: var(--main);
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 16px;
+    }
+    header{
+        width: 100%;
+        height: 40%;
+        margin: 0;
+        padding: 0;
+        background: url('/images/bg-mobile-dark.jpg') no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    header .head-part{
+        width: 320px;
+        height: 50px;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        margin-right: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%,0%);
+    }
+    .head-part h1{
+        color: #ffffff;
+        font-weight: 700;
+        letter-spacing: 5px;
+    }
+
+    main{
+        width: 320px;
+        height: 60%;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-55%);
+    }
+
+    li,a{
+        text-decoration: none;
+        list-style-type: none;
+        display: block;
+    }
+
+    main .add-item{
+        width: 100%;
+        height: 15%;
+        padding: 0;
+        margin: 0;
+        background-color: var(--card);
+        border-radius: 5px 5px 5px 5px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: rgba(0,0,0,0.5) 0px 10px 50px -10px;
+    }
+
+    .add-item .chk-wrapper{
+        width: 20%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .chk-wrapper label{
+        width: 20px;
+        height: 20px;
+        padding: 0;
+        margin: 0;
+        border: 1px solid var(--light-text);
+        border-radius: 50%;
+        cursor: pointer;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        }
+
+    .chk-wrapper #chk-inp{
+        display: none;
+    }
+
+    .chk-wrapper input:checked + #checkmark{
+        background-size: 50%;
+    }
+
+    .chk-wrapper label #checkmark{
+        display: block;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        padding: 0;
+        margin: 0;
+        background: url('/images/icon-check.svg') no-repeat center/0%;
+        background-position: center;
+    }
+
+    .add-item input[type='text']{
+        width: 80%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        border: none;
+        border-color: transparent;
+        border-radius: 5px;
+        background-color: inherit;
+        color: var(--light-text);
+        font-size: 16px;
+        font-family: 'Josefin Sans', sans-serif;
+    }
+
+
+    .list-wrapper{
+        width: 100%;
+        height: 70%;
+        padding: 0;
+        margin: 0;
+        box-shadow: rgb(0,0,0) 0px 10px 20px -10px;
+    }
+
+    .todo-list{
+        width: 100%;
+        height: 85%;
+        padding: 0;
+        margin: 0;
+        background-color: var(--card);
+        border-radius: 5px 5px 0px 0px;
+    }
+    .todo-list .todo-item{
+        width: 100%;
+        height: 15%;
+        padding: 0;
+        margin: 0;
+        border: none;
+        border-bottom: 1px solid var(--text);
+        background-color: inherit;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .todo-item .chk-wrapper{
+        width: 10%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .todo-item .chk-wrapper label{
+        width: 20px;
+        height: 20px;
+        padding: 0;
+        margin: 0;
+        border: 1px solid var(--light-text);
+        border-radius: 50%;
+        cursor: pointer;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .todo-item .chk-wrapper #chk-inp{
+        display: none;
+    }
+
+    .todo-item .chk-wrapper input:checked + #checkmark{
+        background-size: 50%;
+    }
+
+    .todo-item .chk-wrapper label #checkmark{
+        display: block;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        padding: 0;
+        margin: 0;
+        background: url('/images/icon-check.svg') no-repeat center/0%;
+    }
+
+    .todo-item .todo-text p{
+        display: block;
+        width: 80%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        color: var(--text);
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .todo-item .todo-del{
+        width: 10%;
+        height: 100%;
+        background-color: inherit;
+        display: none;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .todo-list em{
+        display: block;
+        margin: auto;
+        color: var(--light-text);
+        position: relative;
+        top : 50%;
+        left: 100%;
+        transform: translate(-70%,-50%);
+    }
+
+    .actions{
+        width: 100%;
+        height: 15%;
+        background-color: var(--card);
+        border-top: 1px solid var(--light-text);
+        border-radius: 0px 0px 5px 5px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .actions a{
+        color: var(--light-text);
+        font-size: 12px;
+        font-weight: 700;
+    }
+
+    .actions a:hover{
+        color: var(--blue);
+    }
+
+    .actions a:active{
+        color: var(--main);
+    }
+
+    .actions div{
+        width: 50%;
+        height: 100%;
+        border-radius: 0px 0px 5px 5px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--card);
+    }
+
+    .actions .nav{
+        width: 320px;
+        height: 50px;
+        border-radius: 5px;
+        position: absolute;
+        top: 100%;
+        z-index: 999;
+    }
+
+    .nav div{
+        width: 70%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .bot-txt{
+        width: 100%;
+        height: 10%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
+        color: var(--light-text);
+        position: absolute;
+        top: 120%;
+    }
+}
+
+
+
+
+
+
+
+
+
