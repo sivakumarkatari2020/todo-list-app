@@ -7,9 +7,15 @@
     --shadow : hsl(237,14%,25%);
     --hover : hsl(236,33%,92%);
     --blue : hsl(220,98%,61%);
+    --bg-desktop : url('/images/bg-desktop-dark.jpg');
+    --bg-mobile : url('/images/bg-mobile-dark.jpg');
 }
 /*Media query for the desktop layout*/
 @media screen and (min-width : 450px) {
+    *{
+        padding: 0;
+        margin: 0;
+    }
     body{
         width: 100vw;
         height: 100vh;
@@ -24,7 +30,8 @@
         height: 40%;
         margin: 0;
         padding: 0;
-        background: url('/images/bg-desktop-dark.jpg') no-repeat;
+        background-image: var(--bg-desktop);
+        background-repeat: no-repeat;
         background-size: cover;
     }
     header .head-part{
@@ -44,12 +51,12 @@
     .head-part h1{
         color: #ffffff;
         font-weight: 700;
-        letter-spacing: 5px;
+        letter-spacing: 8px;
     }
 
     main{
         width: 500px;
-        height: 70%;
+        height: 60%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -57,7 +64,7 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%,-40%);
+        transform: translate(-50%,-50%);
     }
 
     li,a{
@@ -68,8 +75,9 @@
 
     main .add-item{
         width: 100%;
-        height: 10%;
+        height: 15%;
         background-color: var(--card);
+        color: var(--text);
         border-radius: 5px 5px 5px 5px;
         display: flex;
         flex-direction: row;
@@ -79,60 +87,56 @@
     }
 
     .add-item .chk-wrapper{
-        width: 10%;
+        width: 20%;
         height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    .chk-wrapper label{
+    #checkmark{
         width: 25px;
         height: 25px;
+        border-radius: 50%;
         padding: 0;
         margin: 0;
         border: 1px solid var(--light-text);
         border-radius: 50%;
         cursor: pointer;
         box-sizing: border-box;
-        }
 
-    .chk-wrapper #chk-inp{
-        display: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
-    .chk-wrapper input:checked + #checkmark{
-        background-size: 60%;
+    #checkmark img{
+        width: 10px;
+        height: 10px;
+        color : white;
     }
-
-    .chk-wrapper label #checkmark{
-        display: block;
-        width: 25px;
-        height: 25px;
-        border-radius: 50%;
-        padding: 0;
-        margin: 0;
-        background: url('/images/icon-check.svg') no-repeat center/0%;
-    }
-
     .add-item input[type='text']{
-        width: 90%;
-        height: 100%;
+        width: 60%;
+        height: 70%;
         padding: 0;
         margin: 0;
         border: none;
-        border-color: transparent;
+        outline: none;
         border-radius: 5px;
         background-color: inherit;
-        color: var(--light-text);
+        color: var(--text);
         font-size: 16px;
         font-family: 'Josefin Sans', sans-serif;
+    }
+    .add-item .space-wrapper{
+        width: 20%;
+        height: 100%;
     }
 
 
     .list-wrapper{
         width: 100%;
-        height: 70%;
+        height: 80%;
         padding: 0;
         margin: 0;
         box-shadow: rgb(0,0,0) 0px 40px 30px -10px;
@@ -145,30 +149,30 @@
         margin: 0;
         background-color: var(--card);
         border-radius: 5px 5px 0px 0px;
+        overflow: auto;
     }
     .todo-list .todo-item{
         width: 100%;
-        height: 15%;
+        height: 20%;
         padding: 0;
         margin: 0;
         border: none;
-        border-bottom: 1px solid var(--text);
+        border-bottom: 0.5px solid var(--light-text);
         background-color: inherit;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
         align-items: center;
     }
 
-    .todo-item .chk-wrapper{
-        width: 10%;
+    .todo-item .chk-list{
+        width: 20%;
         height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    .todo-item .chk-wrapper label{
+    .todo-item .checkmark{
         width: 25px;
         height: 25px;
         padding: 0;
@@ -177,44 +181,37 @@
         border-radius: 50%;
         cursor: pointer;
         box-sizing: border-box;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
-    .todo-item .chk-wrapper #chk-inp{
-        display: none;
+    .chkmark img{
+        width: 10px;
+        height: 10px;
     }
 
-    .todo-item .chk-wrapper input:checked + #checkmark{
-        background-size: 60%;
-    }
-
-    .todo-item .chk-wrapper label #checkmark{
+    .todo-item .todo-text{
         display: block;
-        width: 25px;
-        height: 25px;
-        border-radius: 50%;
-        padding: 0;
-        margin: 0;
-        background: url('/images/icon-check.svg') no-repeat center/0%;
-    }
-
-    .todo-item .todo-text p{
-        display: block;
-        width: 80%;
+        width: 60%;
         height: 100%;
         padding: 0;
         margin: 0;
         color: var(--text);
+        font-size: 18px;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
+        overflow: auto;
     }
 
     .todo-item .todo-del{
-        width: 10%;
+        width: 20%;
         height: 100%;
         background-color: inherit;
-        display: none;
+        display: flex;
         justify-content: center;
         align-items: center;
     }
@@ -241,16 +238,17 @@
         align-items: center;
     }
 
-    .actions a{
+    .actions p{
         color: var(--light-text);
         font-size: 14px;
+        cursor: pointer;
     }
 
-    .actions a:hover{
+    .actions p:hover{
         color: var(--blue);
     }
 
-    .actions a:active{
+    .actions p:active{
         color: var(--main);
     }
 
@@ -284,16 +282,35 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        transform: translate(-50%,0%);
         font-size: 14px;
         color: var(--light-text);
+    }
+
+    ::-webkit-scrollbar{
+        width: 5px;
+    }
+    ::-webkit-scrollbar-track{
+        border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb{
+        background-color: var(--light-text);
+        border-radius: 10px;
     }
 }
 
 /*Media query for the Mobile layout*/
-@media screen and (max-width : 450px) and (min-height : 600px) {
+@media screen and (max-width : 450px) {
+    *{
+        padding: 0;
+        margin: 0;
+    }
     body{
         width: 100%;
-        height: 100vh;
+        height: 100%;
         padding: 0;
         margin: 0;
         background-color: var(--main);
@@ -302,19 +319,18 @@
     }
     header{
         width: 100%;
-        height: 40%;
+        height: 250px;
         margin: 0;
         padding: 0;
-        background: url('/images/bg-mobile-dark.jpg') no-repeat;
+        background: var(--bg-mobile);
+        background-repeat: no-repeat;
         background-size: cover;
-        background-position: center;
     }
     header .head-part{
-        width: 320px;
-        height: 50px;
+        width: 80%;
+        height: 10%;
         padding: 0;
         margin: 0;
-        box-sizing: border-box;
         margin-right: 0;
         display: flex;
         flex-direction: row;
@@ -323,22 +339,21 @@
         position: relative;
         top: 20%;
         left: 50%;
-        transform: translate(-50%,0%);
+        transform: translate(-50%,30%);
     }
     .head-part h1{
         color: #ffffff;
         font-weight: 700;
-        letter-spacing: 5px;
+        letter-spacing: 8px;
+        font-size: 26px;
     }
 
     main{
-        width: 320px;
-        height: 60%;
-        padding: 0;
-        margin: 0;
+        width: 80%;
+        height: 70%;
         display: flex;
         flex-direction: column;
-        justify-content: space-around;
+        justify-content: center;
         align-items: center;
         position: absolute;
         top: 50%;
@@ -350,13 +365,13 @@
         text-decoration: none;
         list-style-type: none;
         display: block;
+        color: var(--light-text);
     }
 
     main .add-item{
         width: 100%;
-        height: 15%;
-        padding: 0;
-        margin: 0;
+        height: 12%;
+        margin-bottom: 20px;
         background-color: var(--card);
         border-radius: 5px 5px 5px 5px;
         display: flex;
@@ -374,7 +389,7 @@
         align-items: center;
     }
 
-    .chk-wrapper label{
+    #checkmark{
         width: 20px;
         height: 20px;
         padding: 0;
@@ -383,28 +398,15 @@
         border-radius: 50%;
         cursor: pointer;
         box-sizing: border-box;
+
         display: flex;
         justify-content: center;
         align-items: center;
-        }
-
-    .chk-wrapper #chk-inp{
-        display: none;
     }
 
-    .chk-wrapper input:checked + #checkmark{
-        background-size: 50%;
-    }
-
-    .chk-wrapper label #checkmark{
-        display: block;
-        width: 25px;
-        height: 25px;
-        border-radius: 50%;
-        padding: 0;
-        margin: 0;
-        background: url('/images/icon-check.svg') no-repeat center/0%;
-        background-position: center;
+    #checkmark img{
+        width: 10px;
+        height: 10px;
     }
 
     .add-item input[type='text']{
@@ -413,10 +415,10 @@
         padding: 0;
         margin: 0;
         border: none;
-        border-color: transparent;
+        outline: none;
         border-radius: 5px;
         background-color: inherit;
-        color: var(--light-text);
+        color: var(--text);
         font-size: 16px;
         font-family: 'Josefin Sans', sans-serif;
     }
@@ -427,78 +429,65 @@
         height: 70%;
         padding: 0;
         margin: 0;
-        box-shadow: rgb(0,0,0) 0px 10px 20px -10px;
+        box-shadow: rgb(0,0,0) 0px 20px 30px -10px;
     }
 
     .todo-list{
         width: 100%;
-        height: 85%;
+        height: 90%;
         padding: 0;
         margin: 0;
         background-color: var(--card);
         border-radius: 5px 5px 0px 0px;
+        overflow: auto;
     }
     .todo-list .todo-item{
         width: 100%;
-        height: 15%;
+        height: 20%;
         padding: 0;
         margin: 0;
         border: none;
-        border-bottom: 1px solid var(--text);
+        border-bottom: 0.5px solid var(--light-text);
         background-color: inherit;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
         align-items: center;
     }
 
-    .todo-item .chk-wrapper{
-        width: 10%;
+    .todo-item .chk-list{
+        width: 20%;
         height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    .todo-item .chk-wrapper label{
+    .todo-item .checkmark{
         width: 20px;
         height: 20px;
+        border-radius: 50%;
+        border: 1px solid var(--light-text);
         padding: 0;
         margin: 0;
-        border: 1px solid var(--light-text);
-        border-radius: 50%;
-        cursor: pointer;
-        box-sizing: border-box;
+
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    .todo-item .chk-wrapper #chk-inp{
-        display: none;
+    .checkmark img{
+        width: 10px;
+        height: 10px;
     }
 
-    .todo-item .chk-wrapper input:checked + #checkmark{
-        background-size: 50%;
-    }
-
-    .todo-item .chk-wrapper label #checkmark{
+    .todo-item .todo-text{
         display: block;
-        width: 25px;
-        height: 25px;
-        border-radius: 50%;
-        padding: 0;
-        margin: 0;
-        background: url('/images/icon-check.svg') no-repeat center/0%;
-    }
-
-    .todo-item .todo-text p{
-        display: block;
-        width: 80%;
+        width: 60%;
         height: 100%;
         padding: 0;
         margin: 0;
         color: var(--text);
+        font-size: 16px;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
@@ -506,10 +495,10 @@
     }
 
     .todo-item .todo-del{
-        width: 10%;
+        width: 20%;
         height: 100%;
         background-color: inherit;
-        display: none;
+        display: flex;
         justify-content: center;
         align-items: center;
     }
@@ -521,12 +510,12 @@
         position: relative;
         top : 50%;
         left: 100%;
-        transform: translate(-70%,-50%);
+        transform: translate(-65%,-50%);
     }
 
     .actions{
         width: 100%;
-        height: 15%;
+        height: 12%;
         background-color: var(--card);
         border-top: 1px solid var(--light-text);
         border-radius: 0px 0px 5px 5px;
@@ -536,24 +525,23 @@
         align-items: center;
     }
 
-    .actions a{
+    .actions p{
         color: var(--light-text);
         font-size: 12px;
-        font-weight: 700;
+        cursor: pointer;
     }
 
-    .actions a:hover{
+    .actions p:hover{
         color: var(--blue);
     }
 
-    .actions a:active{
+    .actions p:active{
         color: var(--main);
     }
 
     .actions div{
         width: 50%;
         height: 100%;
-        border-radius: 0px 0px 5px 5px;
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -562,20 +550,25 @@
     }
 
     .actions .nav{
-        width: 320px;
+        width: 100%;
         height: 50px;
         border-radius: 5px;
+        box-shadow: rgb(0,0,0) 0px 10px 30px -10px;
         position: absolute;
         top: 100%;
-        z-index: 999;
+        left: 0;
     }
 
     .nav div{
-        width: 70%;
+        width: 60%;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
         align-items: center;
+    }
+
+    .nav div a{
+        font-size: 14px;
     }
 
     .bot-txt{
@@ -585,12 +578,26 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        position: absolute;
+        top: 90%;
+        left: 50%;
+        transform: translate(-50%,0%);
         font-size: 14px;
         color: var(--light-text);
-        position: absolute;
-        top: 120%;
+    }
+    ::-webkit-scrollbar{
+        width: 5px;
+    }
+    ::-webkit-scrollbar-track{
+        border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb{
+        background-color: var(--light-text);
+        border-radius: 10px;
     }
 }
+
+
 
 
 

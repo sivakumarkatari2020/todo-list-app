@@ -12,7 +12,7 @@ The designs were created to the following widths:
 ### Primary
 
 - Bright Blue: hsl(220, 98%, 61%) (visited nav option)
-- Check Background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%) (checkbox)
+- Check Background: linear-gradient hsl(192, 100%, 67%) to hsl(280, 87%, 65%)
 
 ### Neutral
 

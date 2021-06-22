@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Todo app</title>
+
+</head>
+<body>
+
+  <header>
+    <div class="head-part">
+      <h1>TODO</h1>
+      <div class="theme" onclick="chngTheme()">
+        <img src="/images/icon-sun.svg" alt="dark-mode" id="theme-changer">
+      </div>
+    </div>
+  </header>
+  <main>
+
+    <div class="add-item">
+      <div class="chk-wrapper" onclick="addTask()">
+        <div id="checkmark"></div>
+      </div>
+      <input type="text" name="inp" id="inp" placeholder="Create a new todo..." value="">
+      <div class="space-wrapper"></div>
+    </div>
+
+    <div class="list-wrapper">
+    <div class="todo-list" id="todo-list">
+      <!--Content will be dynamically added-->
+    </div>
+
+    <div class="actions">
+      <div id="items-left"><p>0 items left</p></div>
+      <div class="nav">
+        <div>
+          <p onclick="listAll()">All</p>
+          <p onclick="listActive()">Active</p>
+          <p onclick="listCompleted()">Completed</p>
+        </div>
+      </div>
+      <div onclick="clearCompleted()"><p>Clear Completed</p></div>
+    </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="bot-txt">Drag and drop to reorder list</div>
+  </footer>
+
+  <!--Script files goes here-->
+  <script src="script/theme.js"></script>
+
+  <script src="script/index.js"></script>
+</body>
+</html>
