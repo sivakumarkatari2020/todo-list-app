@@ -26,10 +26,10 @@ let darkTheme = () => {
     document.documentElement.style.setProperty('--light-text','hsl(233,14%,35%)');
     document.documentElement.style.setProperty('--hover','hsl(236,33%,92%)');
     document.documentElement.style.setProperty('--blue','hsl(220,98%,61%)');
-    document.documentElement.style.setProperty('--bg-desktop',"url('/images/bg-desktop-dark.jpg')");   
-    document.documentElement.style.setProperty('--bg-mobile',"url('/images/bg-mobile-dark.jpg')");
+    document.documentElement.style.setProperty('--bg-desktop',"url('./images/bg-desktop-dark.jpg')");   
+    document.documentElement.style.setProperty('--bg-mobile',"url('./images/bg-mobile-dark.jpg')");
     //For changing icon
-    document.getElementById('theme-changer').setAttribute('src','/images/icon-sun.svg')
+    document.getElementById('theme-changer').setAttribute('src','./images/icon-sun.svg')
 
 }
 
@@ -42,9 +42,9 @@ let brightTheme = () => {
     document.documentElement.style.setProperty('--light-text','hsl(236,9%,61%)');
     document.documentElement.style.setProperty('--hover','hsl(236,32%,92%)');
     document.documentElement.style.setProperty('--blue','hsl(220,98%,61%)');
-    document.documentElement.style.setProperty('--bg-desktop',"url('/images/bg-desktop-light.jpg')");   
-    document.documentElement.style.setProperty('--bg-mobile',"url('/images/bg-mobile-light.jpg')");
+    document.documentElement.style.setProperty('--bg-desktop',"url('./images/bg-desktop-light.jpg')");   
+    document.documentElement.style.setProperty('--bg-mobile',"url('./images/bg-mobile-light.jpg')");
     //For changing icon
-    document.getElementById('theme-changer').setAttribute('src','/images/icon-moon.svg')
+    document.getElementById('theme-changer').setAttribute('src','./images/icon-moon.svg')
 
 }

@@ -7,8 +7,8 @@
     --shadow : hsl(237,14%,25%);
     --hover : hsl(236,33%,92%);
     --blue : hsl(220,98%,61%);
-    --bg-desktop : url('/images/bg-desktop-dark.jpg');
-    --bg-mobile : url('/images/bg-mobile-dark.jpg');
+    --bg-desktop : url('./images/bg-desktop-dark.jpg');
+    --bg-mobile : url('./images/bg-mobile-dark.jpg');
 }
 /*Media query for the desktop layout*/
 @media screen and (min-width : 450px) {
@@ -200,6 +200,7 @@
         margin: 0;
         color: var(--text);
         font-size: 18px;
+        font-weight: 400;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
@@ -349,8 +350,8 @@
     }
 
     main{
-        width: 80%;
-        height: 70%;
+        width: 85%;
+        height: 462px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -488,6 +489,7 @@
         margin: 0;
         color: var(--text);
         font-size: 16px;
+        font-weight: 400;
         display: flex;
         flex-direction: row;
         justify-content: flex-start;

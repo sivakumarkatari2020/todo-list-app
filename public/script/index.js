@@ -18,7 +18,7 @@ function addTask(){
                 <p>${text.value}</p>
             </div>
             <div class="todo-del" id="todo-del${ID}" onclick="delTask(${ID})" style="display:none;">
-                <img src="/images/icon-cross.svg">
+                <img src="./images/icon-cross.svg">
             </div>
         </div>`;
     //PUT THAT TEMPLATE INTO TODO LIST
@@ -38,7 +38,7 @@ function addTask(){
     let chkBox = document.getElementById('checkmark');
     chkBox.style.background = 'linear-gradient(135deg,hsl(192,100%,67%),hsl(280,87%,65%))';
     let checkimg = document.createElement("img");
-    checkimg.setAttribute("src","/images/icon-check.svg");
+    checkimg.setAttribute("src","./images/icon-check.svg");
     chkBox.append(checkimg);
     text.value = '';
     setTimeout(() => {
@@ -77,7 +77,7 @@ function crossTask(identity){
         //APPLYING STYLES
         chkBox.style.background = 'linear-gradient(135deg,hsl(192,100%,67%),hsl(280,87%,65%))';
         let checkimg = document.createElement("img");
-        checkimg.setAttribute("src","/images/icon-check.svg");
+        checkimg.setAttribute("src","./images/icon-check.svg");
         chkBox.append(checkimg);
         //MAKING CROSS SYMBOL VISIBLE
         cross.style.display = 'flex';
@@ -131,14 +131,14 @@ function listAll(){
             <div class="todo-item" id="${ID}" style="text-decoration-line : line-through;text-decoration-color : rgb(77,80,102);">
                 <div class="chk-list" id="chk-list${ID}" onclick="crossTask(${ID})" style="pointer-events : none;">
                     <div id="checkmark${ID}" class="checkmark" style="background : linear-gradient(135deg,rgb(87,221,225),rgb(192,88,243));">
-                        <img src="/images/icon-check.svg">
+                        <img src="./images/icon-check.svg">
                     </div>
                 </div>
                 <div class="todo-text" id="todo-text${ID}" onclick="crossTask(${ID})" style="pointer-events:none;color:rgb(77,80,102);">
                     <p>${todoStack[i].todo}</p>
                 </div>
                 <div class="todo-del" id="todo-del${ID}" onclick="delTask(${ID})" style="display:flex;">
-                    <img src="/images/icon-cross.svg">
+                    <img src="./images/icon-cross.svg">
                 </div>
             </div>`;
             todoStack[i].node = template;
