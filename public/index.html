@@ -8,6 +8,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.13.0/Sortable.min.js"></script>
+
   <title>Frontend Mentor | Todo app</title>
 
 </head>
@@ -37,7 +39,7 @@
     </div>
 
     <div class="actions">
-      <div id="items-left"><p>0 items left</p></div>
+      <div id="items-left"><span>0 items left</span></div>
       <div class="nav">
         <div>
           <p onclick="listAll()">All</p>
@@ -58,5 +60,21 @@
   <script src="script/theme.js"></script>
 
   <script src="script/index.js"></script>
+
+  <script>
+
+    const dragArea = document.getElementById('todo-list');
+    new Sortable(dragArea,{
+      animation : 350
+    });
+
+    const addItem = document.querySelector('.add-item');
+    let task = document.getElementById('inp').value;
+    addItem.addEventListener('keydown',(event) => {
+      if(event.key == 'Enter'){
+        addTask();
+      }
+    })
+  </script>
 </body>
 </html>

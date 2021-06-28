@@ -103,7 +103,7 @@ function itemsLeft(){
         }
     }
     //UPDATING DOM...
-    document.getElementById('items-left').innerHTML = `<p>${count} items left</p>`;
+    document.getElementById('items-left').innerHTML = `<span>${count} items left</span>`;
 
 }
 //TO CLEAR THE ALL COMPLETED VALUES FROM THE VIEW
@@ -112,7 +112,7 @@ function clearCompleted(){
     let len = todoStack.length;
     for(let i=0;i<len;i++){
         if(todoStack[i].isCompleted == true && todoStack[i].life != 'dead'){
-            console.log(todoStack[i]);
+            //console.log(todoStack[i]);
             delTask(i+1);
         }
     }
