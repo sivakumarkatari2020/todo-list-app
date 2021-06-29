@@ -82,13 +82,28 @@ function crossTask(identity){
         //MAKING CROSS SYMBOL VISIBLE
         cross.style.display = 'flex';
         //MAKING COMPLETED ELEMENT UNCLICKABLE
-        document.getElementById(chkId).style.pointerEvents = 'none';
-        document.getElementById(todoId).style.pointerEvents = 'none';
+        /*document.getElementById(chkId).style.pointerEvents = 'none';
+        document.getElementById(todoId).style.pointerEvents = 'none';*/
         document.getElementById(todoId).style.color = 'hsl(233,14%,35%)';
         //UPDATING OUR TODOSTACK ARRAY
         let match = todoStack[identity-1];
         match.isCompleted = true;
         //UPDATING ITEMS LEFT VALUE IN ACTIONS TAB
+        itemsLeft();
+    }else{
+        todo.style.textDecoration = 'none';
+        chkBox.style.background = 'inherit';
+        chkBox.removeChild(chkBox.lastChild);
+        //MAKING CROSS SYMBOL UNVISIBLE
+        cross.style.display = 'none';
+        //MAKING ELEMENT CLICKABLE AGAIN
+        /*
+        document.getElementById(chkId).style.pointerEvents = 'all';
+        document.getElementById(todoId).style.pointerEvents = 'all';*/
+        document.getElementById(todoId).style.color = 'hsl(234,39%,85%)';
+        //UPDATING OUR TODOSTACK ARRAY
+        let match = todoStack[identity-1];
+        match.isCompleted = false;
         itemsLeft();
     }
 }
